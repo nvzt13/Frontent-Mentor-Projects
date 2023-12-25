@@ -11,7 +11,6 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     *{
-      border: 1px solid;
       margin: 0;
       padding: 0;
       font-family: sans-serif,'Times New Roman', Times, serif;
@@ -31,21 +30,62 @@
      height: auto;
      background-color: #fff;
      border-radius: 15px;
+     border: 1px solid;
     }
     .container .card{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+      width: 20vw;
       margin: 20px;
-      height: 50vh;
-      width: 30vw;
     }
     .container .card .img-wrapper{
       margin: auto;
-      width: 30vw;
+      width: 20vw;
     }
     .container .card .img-wrapper img{
       width: 100%;
+    }
+    .container .card .main{
+      margin: 15px 0;
+    }
+    .container .card .main button{
+      background-color: rgb(240, 240, 64);
+      padding: 10px 20px;
+      font-weight:bolder;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .container .card .main p{
+      font-weight: 300;
+    }
+    .container .card .footer{
+
+    }
+    .container .card .footer h3{
+      margin-bottom: 10px;
+    }
+    .container .card .footer p{
+      margin-bottom: 10px;
+    }
+    /* @ media*/
+    @media screen and (max-width: 960px) {
+      .container .card{
+      width: 40vw;
+      margin: 20px;
+    }
+    .container .card .img-wrapper{
+      margin: auto;
+      width: 40vw;
+    }
+    }
+    @media screen and (max-width: 600px) {
+      .container .card{
+      width: 90vw;
+      margin: 20px;
+    }
+    .container .card .img-wrapper{
+      margin: auto;
+      width: 90vw;
+    }
     }
 
   </style>
@@ -64,10 +104,11 @@
     <div class="footer">
       <h3>HTML & CSS fundations</h3>
       <p>These languages are the backbone of every website, defining structure, content, and presentation.</p>
+      <div class="user-image">
+        <img src="./assets/images/image-avatar.webp" alt="">
+      </div>
     </div>
-    <div class="user-image">
-      <img src="./assets/images/image-avatar.webp" alt="">
-    </div>
+ 
   </div>
 </div>
 
