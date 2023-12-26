@@ -17,30 +17,117 @@
       padding: 0;
       font-family:sans-serif,'Times New Roman', Times, serif;
       list-style: none;
-      border: 1px solid;
     }
     body{
       background-image: url("./assets/images/background-pattern-desktop.svg");
       background-repeat: no-repeat;
       background-size: contain;
       object-fit: cover;
-      height: 100vh;
       position: relative;
-      background-position: center;
+      background-color: aliceblue;
     }
-    
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    .container .card{
+      background-color:#fff;
+      border-radius: 10px;
+      width: 20vw;
+      height: 40vh;
+    }
+    .container .card .header{
+      display: flex;
+      line-height: 5em;
+    }
+    .container .card .header h2{
+      font-size: 36px;
+    }
+    .container .card ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 25vh;
+    }
+    .container .card ul li{
+      font-weight: bolder;
+      width: 100%;
+    }
+    .container .card ul .row{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid;
+      border-color: antiquewhite;
+      margin: 0 20px;
+
+    }
+    .container .card ul .li button{
+
+    }
+    .container .card ul .li button img{
+      margin-right: 10px;
+    }
+    /*@ Media*/
+    @media screen and (max-width:1280px){
+      .container .card{
+        width: 30vw;
+    }
+    }
+    @media screen and (max-width:960px){
+      .container .card{
+        width: 40vw;
+    }
+    }
+    @media screen and (max-width:600px){
+      .container .card{
+        width: 100vw;
+    }
+    }
   </style>
 </head>
 <body>
 <div class="container">
   <div class="card">
+  <div class="header">
+    <img src="./assets/images/icon-star.svg" alt="">
+    <h2>FAQs</h2>
+  </div>
     <ul>
-      <li>What is Frontend Mentor, and how will it help me?</li>
+     <div class="row">
+      <li id="li1">What is Frontend Mentor, and how will it help me?</li>
+      <button id="btn1"><img src="./assets/images/icon-plus.svg" alt=""></button>
+     </div>
+     <div class="row">
       <li>Is Frontend Mentor free?</li>
+      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
+     </div>
+     <div class="row">
       <li>Can I use Frontend Mentor projects in my portfolio?</li>
+      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
+     </div>
+     <div class="row">
       <li>How can I get help if I'm on a challange?</li>
+      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
+     </div>
     </ul>
   </div>
 </div>
+
+<script>
+const btn1 = document.getElementById("btn1")
+const li1 = document.getElementById("li1")
+
+
+btn1.addEventListener("click",answer)
+
+function answer(){
+  li1.textContent += ` <div> Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML,CSS and JavaScript.It's suitable for all levels and ideal for portfolip building   </div> `
+}
+</script>
 </body>
 </html>
