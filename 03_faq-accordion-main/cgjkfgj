@@ -1,0 +1,11 @@
+
+
+
+.container .card ul .row .btn-minus{
+    padding: 12px;
+    background-image: url("./assets/images/icon-minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+  }

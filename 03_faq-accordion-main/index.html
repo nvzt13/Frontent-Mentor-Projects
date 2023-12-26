@@ -38,7 +38,7 @@
       background-color:#fff;
       border-radius: 10px;
       width: 20vw;
-      height: 40vh;
+      height: auto;
     }
     .container .card .header{
       display: flex;
@@ -52,7 +52,15 @@
       flex-direction: column;
       justify-content: space-evenly;
       height: 25vh;
+      height:auto;
+      flex-wrap: wrap;
     }
+    .container .card ul p{
+      margin: 0 20px;
+      width: 80%;
+      letter-spacing: 0.06em;
+    }
+
     .container .card ul li{
       font-weight: bolder;
       width: 100%;
@@ -63,13 +71,25 @@
       align-items: center;
       border-bottom: 1px solid;
       border-color: antiquewhite;
-      margin: 0 20px;
-
+      margin: 15px 20px;
     }
-    .container .card ul .li button{
-
+    .container .card ul .row .btn-plus{
+      padding: 12px;
+      background-image: url("./assets/images/icon-plus.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: cover;
+      border-radius: 50%;
     }
-    .container .card ul .li button img{
+    .container .card ul .row .btn-minus{
+      padding: 12px;
+      background-image: url("./assets/images/icon-minus.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .container .card ul .row button img{
       margin-right: 10px;
     }
     /*@ Media*/
@@ -92,7 +112,7 @@
 </head>
 <body>
 <div class="container">
-  <div class="card">
+  <div class="card" id="card">
   <div class="header">
     <img src="./assets/images/icon-star.svg" alt="">
     <h2>FAQs</h2>
@@ -100,34 +120,48 @@
     <ul>
      <div class="row">
       <li id="li1">What is Frontend Mentor, and how will it help me?</li>
-      <button id="btn1"><img src="./assets/images/icon-plus.svg" alt=""></button>
+      <button id="btn1" class="btn-plus"></button>
      </div>
+     <p id="answer" class="answer"></p>
      <div class="row">
       <li>Is Frontend Mentor free?</li>
-      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
+      <button class="btn-plus"></button>
      </div>
      <div class="row">
       <li>Can I use Frontend Mentor projects in my portfolio?</li>
-      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
-     </div>
+      <button class="btn-plus" ></button>
+    </div>
      <div class="row">
       <li>How can I get help if I'm on a challange?</li>
-      <button><img src="./assets/images/icon-plus.svg" alt=""></button>
+      <button class="btn-plus"></button>
      </div>
     </ul>
   </div>
 </div>
 
 <script>
-const btn1 = document.getElementById("btn1")
-const li1 = document.getElementById("li1")
+const card = document.getElementById("card")
+const answer = document.getElementById("answer")
+let text1 = "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML,CSS and JavaScript.It's suitable for all levels and ideal for portfolip building  "
 
 
-btn1.addEventListener("click",answer)
 
-function answer(){
-  li1.textContent += ` <div> Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML,CSS and JavaScript.It's suitable for all levels and ideal for portfolip building   </div> `
-}
+card.addEventListener("click",(e)=>{
+  let button=e.target
+  if(!button.matches("button")){
+    return
+  }else{
+    if(button.className==="btn-plus" && button.id==="btn1"){
+    button.className="btn-minus"
+    answer.innerHTML=text1
+  }else{
+    button.className="btn-plus"
+    answer.innerHTML=""
+  }
+  }
+  
+}) 
+
 </script>
 </body>
 </html>
