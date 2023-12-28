@@ -12,36 +12,48 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      border: 1px solid;
+    }
   </style>
 </head>
 <body>
-
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<div class="container">
+  <div class="result">
+    <div class="row">
+      <p>Your Result</p>
+      <div class="score">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <p>Great</p>
+      <p>Your scored higher than 65% of the people who have taken these tests.</p>
+    </div>
   </div>
+  <div class="summary">
+    <div class="row">
+      <h3>Summary</h3>
+      <ul>
+        <div class="test">
+          <img src="./assets/images/icon-reaction.svg" alt="">
+           <span>Reaction</span>
+        </div>
+        <div class="test">
+          <img src="./assets/images/icon-memory.svg" alt="">
+           <span>Memory</span>
+        </div>
+        <div class="test">
+          <img src="./assets/images/icon-verbal.svg" alt="">
+           <span>Verbal</span>
+        </div>
+        <div class="test">
+          <img src="./assets/images/icon-visual.svg" alt="">
+           <span>Visual</span>
+        </div>
+      </ul>
+      <button>Continue</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
